@@ -1,5 +1,5 @@
 #云编译公用核心
-name: OWRT-RAX3000M-EMMC
+name: IWRT-RAX3000M-EMMC
 
 on:
   #公用核心标识
