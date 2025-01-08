@@ -83,7 +83,7 @@ jobs:
         with:
           ccache: 'true'
           mixkey: 'openwrt21-cortexa53'
-          prefix: ${{ github.workspace }}/openwrt
+          prefix: ./owrt
 
       - name: 自定义 feeds
         run: |
