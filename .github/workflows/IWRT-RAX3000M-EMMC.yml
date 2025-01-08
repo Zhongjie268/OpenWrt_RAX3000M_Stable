@@ -17,6 +17,9 @@ on:
       OWRT_URL:
         required: true
         type: string
+      OWRT_BRANCH:
+        required: true
+        type: string
       OWRT_PW:
         required: true
         type: string
@@ -30,6 +33,7 @@ env:
   OWRT_THEME: ${{inputs.OWRT_THEME}}
   OWRT_NAME: ${{inputs.OWRT_NAME}}
   OWRT_URL: ${{inputs.OWRT_URL}}
+  OWRT_BRANCH: ${{inputs.OWRT_BRANCH}}
   OWRT_PW: ${{inputs.OWRT_PW}}
   OWRT_IP: ${{inputs.OWRT_IP}}
 
@@ -76,7 +80,7 @@ jobs:
 
       - name: 克隆源码
         run: |
-          git clone $OWRT_URL ./owrt
+          git clone -b $OWRT_BRANCH $OWRT_URL ./owrt
 
       - name: 开启缓存
         uses: klever1988/cachewrtbuild@main
