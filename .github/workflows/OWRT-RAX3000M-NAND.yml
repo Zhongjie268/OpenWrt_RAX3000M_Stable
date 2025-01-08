@@ -118,7 +118,7 @@ jobs:
 
           make defconfig
 
-      - name: 清理 dir
+      - name: 清理目录
         run: |
           cd ./owrt
 
