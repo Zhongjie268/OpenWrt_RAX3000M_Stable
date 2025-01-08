@@ -484,7 +484,7 @@ CONFIG_HAVE_DOT_CONFIG=y
 
 CONFIG_TARGET_mediatek=y
 CONFIG_TARGET_mediatek_filogic=y
-CONFIG_TARGET_mediatek_filogic_DEVICE_cmcc_rax3000m-ubootmod=y
+CONFIG_TARGET_mediatek_filogic_DEVICE_cmcc_rax3000m-nand-ubootmod=y
 
 # CONFIG_TARGET_ramips is not set
 # CONFIG_TARGET_at91 is not set
