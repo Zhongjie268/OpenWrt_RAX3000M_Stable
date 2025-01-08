@@ -38,7 +38,7 @@ env:
   OWRT_IP: ${{inputs.OWRT_IP}}
 
 jobs:
-  owrt_core:
+  iwrt_core:
     runs-on: ubuntu-latest
     steps:
       - name: 检查
