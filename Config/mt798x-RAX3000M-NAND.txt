@@ -23,7 +23,7 @@ CONFIG_PACKAGE_luci-app-adguardhome_INCLUDE_binary=y
 # CONFIG_PACKAGE_luci-app-amule is not set
 # CONFIG_PACKAGE_luci-app-ap-modem is not set
 # CONFIG_PACKAGE_luci-app-appfilter is not set
-CONFIG_PACKAGE_luci-app-argon-config=y
+# CONFIG_PACKAGE_luci-app-argon-config is not set
 # CONFIG_PACKAGE_luci-app-aria2 is not set
 # CONFIG_PACKAGE_luci-app-arpbind is not set
 # CONFIG_PACKAGE_luci-app-attendedsysupgrade is not set
@@ -110,7 +110,7 @@ CONFIG_PACKAGE_luci-app-dockerman=y
 # CONFIG_PACKAGE_luci-app-dump1090 is not set
 # CONFIG_PACKAGE_luci-app-dynapoint is not set
 
-CONFIG_PACKAGE_luci-app-easymesh=y
+# CONFIG_PACKAGE_luci-app-easymesh is not set
 
 # CONFIG_PACKAGE_luci-app-easyupdate is not set
 # CONFIG_PACKAGE_luci-app-emby is not set
@@ -120,6 +120,7 @@ CONFIG_PACKAGE_luci-app-easymesh=y
 CONFIG_PACKAGE_luci-app-eqos-mtk=y
 
 # CONFIG_PACKAGE_luci-app-excalidraw is not set
+CONFIG_PACKAGE_luci-app-fakemesh=y
 # CONFIG_PACKAGE_luci-app-fileassistant is not set
 # CONFIG_PACKAGE_luci-app-filebrowser is not set
 
@@ -4875,7 +4876,7 @@ CONFIG_PACKAGE_e2fsprogs=y
 # CONFIG_PACKAGE_fuse3-utils is not set
 # CONFIG_PACKAGE_hfsfsck is not set
 # CONFIG_PACKAGE_lsattr is not set
-# CONFIG_PACKAGE_mkf2fs is not set
+CONFIG_PACKAGE_mkf2fs=y
 # CONFIG_PACKAGE_mkf2fs-selinux is not set
 # CONFIG_PACKAGE_mkhfs is not set
 # CONFIG_PACKAGE_ncdu is not set
@@ -4897,4 +4898,3 @@ CONFIG_PACKAGE_ntfs3-mount=y
 # CONFIG_PACKAGE_xfs-fsck is not set
 # CONFIG_PACKAGE_xfs-growfs is not set
 # CONFIG_PACKAGE_xfs-mkfs is not set
-
