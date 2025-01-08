@@ -37,7 +37,7 @@ jobs:
   owrt_core:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Projects
+      - name: 检查
         uses: actions/checkout@main
 
       - name: Initialization Environment
@@ -54,7 +54,7 @@ jobs:
           sudo -E systemctl daemon-reload
           sudo -E timedatectl set-timezone "Asia/Shanghai"
 
-      - name: Initialization Values
+      - name: 初始化环境
         run: |
           export OWRT_DATE=$(TZ=UTC-8 date +"%y.%m.%d_%H.%M.%S")
           export OWRT_SOURCE=$(echo $OWRT_URL | cut -d '/' -f 5-)
@@ -67,30 +67,30 @@ jobs:
           echo "OWRT_PW=$OWRT_PW" >> $GITHUB_ENV
           echo "OWRT_IP=$OWRT_IP" >> $GITHUB_ENV
 
-      - name: Check Scripts
+      - name: 检查脚本
         run: |
           cd ./Scripts
 
           dos2unix ./*.sh
           chmod +x ./*.sh
 
-      - name: Clone OWRT Code
+      - name: 克隆源码
         run: |
           git clone $OWRT_URL ./owrt
           
-      - name: Load custom feeds
+      - name: 自定义 feeds
         run: |
           cd ./owrt
           echo 'src-git smpackage https://github.com/kenzok8/small-package' >> feeds.conf.default
 
-      - name: Update Feeds
+      - name: 更新 & 安装 feeds
         run: |
           cd ./owrt
 
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
-      - name: Custom Scripts
+      - name: 执行自定义脚本
         run: |
           cd ./owrt
 
@@ -100,7 +100,7 @@ jobs:
 
           $GITHUB_WORKSPACE/Scripts/Plugins.sh
 
-      - name: Custom Settings
+      - name: 执行自定义设置
         run: |
           cd ./owrt
 
@@ -111,19 +111,19 @@ jobs:
 
           make defconfig
 
-      - name: Cleanup Toolchain
+      - name: 清理 dir
         run: |
           cd ./owrt
 
           make dirclean
 
-      - name: Download Packages
+      - name: 下载软件包
         run: |
           cd ./owrt
 
           make download -j$(nproc)
 
-      - name: Compile Firmware
+      - name: 编译固件中
         run: |
           cd ./owrt
 
@@ -135,7 +135,7 @@ jobs:
           du -h --max-depth=1
           echo "======================="
 
-      - name: Package Firmware
+      - name: 重命名固件包
         run: |
           cd ./owrt && mkdir ./upload
 
@@ -147,7 +147,7 @@ jobs:
 
           $GITHUB_WORKSPACE/Scripts/Renames.sh
 
-      - name: Release Firmware
+      - name: 上传固件发布
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{env.OWRT_TARGET}}_${{env.OWRT_SOURCE}}_${{env.OWRT_DATE}}
@@ -159,13 +159,13 @@ jobs:
             密码：${{env.OWRT_PW}}
             地址：${{env.OWRT_IP}}
 
-      - name: Delete Old Releases
+      - name: 删除旧发布的固件
         uses: dev-drprasad/delete-older-releases@v0.2.1
         with:
           keep_latest: 6
           delete_tags: true
 
-      - name: Delete Old Workflows
+      - name: 删除过时工作流程
         uses: Mattraks/delete-workflow-runs@v2
         with:
           retain_days: 0
