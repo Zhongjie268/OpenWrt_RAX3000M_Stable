@@ -20,8 +20,6 @@ jobs:
       OWRT_THEME: bootstrap
       #默认主机名
       OWRT_NAME: ImmortalWrt
-      #默认密码，仅作展示，更改无效
-      OWRT_PW: password
       #默认地址
       OWRT_IP: 192.168.6.1
       #默认源码
