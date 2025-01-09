@@ -86,7 +86,7 @@ jobs:
         uses: klever1988/cachewrtbuild@main
         with:
           ccache: 'true'
-          mixkey: 'openwrt21-cortexa53'
+          mixkey: 'openwrt23-cortexa53'
           prefix: ./owrt
 
       - name: 自定义 feeds
