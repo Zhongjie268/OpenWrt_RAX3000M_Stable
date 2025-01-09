@@ -120,13 +120,6 @@ jobs:
 
           make defconfig
 
-      - name: 使用 nx30pro eeprom
-        run: |
-          mkdir ./owrt/target/linux/mediatek/filogic/base-files/lib/firmware
-          cp eeprom/nx30pro_eeprom.bin ./owrt/target/linux/mediatek/filogic/base-files/lib/firmware/MT7981_iPAiLNA_EEPROM.bin
-          sed -i 's/caldata_extract_mmc/# caldata_extract_mmc/' ./owrt/target/linux/mediatek/filogic/base-files/lib/preinit/90_extract_caldata
-          sed -i 's#./files/mt7981-default-eeprom/MT7981_iPAiLNA_EEPROM.bin##' ./owrt/package/mtk/drivers/mt_wifi/Makefile
-
       - name: make dirclean
         run: |
           cd ./owrt
