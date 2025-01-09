@@ -117,10 +117,10 @@ jobs:
 
       - name: 使用 nx30pro eeprom
         run: |
-         mkdir -p openwrt/target/linux/mediatek/filogic/base-files/lib/firmware/mediatek
-         cp eeprom/nx30pro_eeprom.bin openwrt/target/linux/mediatek/filogic/base-files/lib/firmware/mediatek
+         mkdir -p ./owrt/target/linux/mediatek/filogic/base-files/lib/firmware
+         cp eeprom/nx30pro_eeprom.bin ./owrt/target/linux/mediatek/filogic/base-files/lib/firmware
          sed -i -e '/caldata_extract_mmc "factory" 0x0 0x1000/ a\           
-         cp /lib/firmware/mediatek/nx30pro_eeprom.bin /lib/firmware/mediatek/mt7981_eeprom_mt7976_dbdc.bin' openwrt/target/linux/mediatek/filogic/base-files/etc/hotplug.d/firmware/11-mt76-caldata
+         cp /lib/firmware/nx30pro_eeprom.bin /lib/firmware/mt7981_eeprom_mt7976_dbdc.bin' ./owrt/target/linux/mediatek/filogic/base-files/etc/hotplug.d/firmware/11-mt76-caldata
 
       - name: 清理目录
         run: |
