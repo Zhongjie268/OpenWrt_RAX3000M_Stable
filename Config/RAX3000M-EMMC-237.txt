@@ -1,4 +1,4 @@
-#开源固件23.05
+#237闭源源固件23.05
 
 CONFIG_TARGET_mediatek=y
 CONFIG_TARGET_mediatek_mt7981=y
