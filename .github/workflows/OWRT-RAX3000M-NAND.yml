@@ -58,12 +58,10 @@ jobs:
         run: |
           export OWRT_DATE=$(TZ=UTC-8 date +"%y.%m.%d_%H.%M.%S")
           export OWRT_SOURCE=$(echo $OWRT_URL | cut -d '/' -f 5-)
-          export OWRT_TYPE=$(sed -n "1{s/^#//;s/\r$//;p;q}" $GITHUB_WORKSPACE/Config/$OWRT_TARGET.txt)
 
           echo "OWRT_SOURCE=$OWRT_SOURCE" >> $GITHUB_ENV
           echo "OWRT_TARGET=$OWRT_TARGET" >> $GITHUB_ENV
           echo "OWRT_DATE=$OWRT_DATE" >> $GITHUB_ENV
-          echo "OWRT_TYPE=$OWRT_TYPE" >> $GITHUB_ENV
           echo "OWRT_PW=$OWRT_PW" >> $GITHUB_ENV
           echo "OWRT_IP=$OWRT_IP" >> $GITHUB_ENV
 
@@ -162,7 +160,6 @@ jobs:
           body: |
             源码：${{env.OWRT_SOURCE}}
             平台：${{env.OWRT_TARGET}}
-            设备：${{env.OWRT_TYPE}}
             密码：${{env.OWRT_PW}}
             地址：${{env.OWRT_IP}}
 
