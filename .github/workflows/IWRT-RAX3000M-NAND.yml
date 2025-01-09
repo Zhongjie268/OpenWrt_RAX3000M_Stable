@@ -120,7 +120,7 @@ jobs:
 
           make defconfig
 
-      - name: 设置是否使用 nx30pro eeprom
+      - name: 使用 nx30pro eeprom
         run: |
          mkdir -p openwrt/target/linux/mediatek/filogic/base-files/lib/firmware/mediatek
          cp eeprom/nx30pro_eeprom.bin openwrt/target/linux/mediatek/filogic/base-files/lib/firmware/mediatek
