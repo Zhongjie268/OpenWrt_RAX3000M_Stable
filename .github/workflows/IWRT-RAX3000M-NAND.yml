@@ -57,7 +57,7 @@ jobs:
       - name: 设置环境
         run: |
           export OWRT_DATE=$(TZ=UTC-8 date +"%y.%m.%d_%H.%M.%S")
-          export OWRT_SOURCE=$(echo $OWRT_URL | cut -d '/' -f 5-)
+          export OWRT_SOURCE=$(echo $OWRT_URL | cut -d '/' -f 4-)
 
           echo "OWRT_SOURCE=$OWRT_SOURCE" >> $GITHUB_ENV
           echo "OWRT_TARGET=$OWRT_TARGET" >> $GITHUB_ENV
@@ -104,7 +104,7 @@ jobs:
 
           $GITHUB_WORKSPACE/Scripts/Plugins.sh
 
-      - name: 执行自定义设置
+      - name: 导入补丁和配置
         run: |
           cd ./owrt
 
