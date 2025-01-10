@@ -20,6 +20,7 @@ CONFIG_PACKAGE_luci-app-eqos-mtk=y
 
 ##---------自添加-------------
 # CONFIG_PACKAGE_luci-app-easymesh is not set
+CONFIG_PACKAGE_luci-app-fakemesh=y
 CONFIG_PACKAGE_luci-app-adguardhome=y
 CONFIG_PACKAGE_luci-app-docker=y
 CONFIG_PACKAGE_luci-app-dockerman=y
