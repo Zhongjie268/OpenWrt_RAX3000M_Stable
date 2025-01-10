@@ -71,13 +71,6 @@ jobs:
         run: |
           git clone $OWRT_URL ./owrt
 
-      - name: 开启缓存
-        uses: klever1988/cachewrtbuild@main
-        with:
-          ccache: 'true'
-          mixkey: 'openwrt21-cortexa53'
-          prefix: ./owrt
-
       - name: 自定义 feeds
         run: |
           cd ./owrt
