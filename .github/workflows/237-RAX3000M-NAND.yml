@@ -35,7 +35,7 @@ env:
 
 jobs:
   iwrt_core:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: 检查
         uses: actions/checkout@main
